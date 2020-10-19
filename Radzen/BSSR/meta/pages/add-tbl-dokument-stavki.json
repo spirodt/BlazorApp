@@ -1,0 +1,428 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Dokumenti",
+                              "component": "tblDokumentID",
+                              "name": "tblDokumentIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblDokumentisFortblDokumentIDResult}",
+                              "textProperty": "Zabeleska",
+                              "valueProperty": "ID",
+                              "placeholder": "Choose TblDokumenti",
+                              "valueType": "int",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "tblDokumentID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tbldokumentstavki.tblDokumentID}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "tblDokumentIDRequiredValidator",
+                              "component": "tblDokumentID",
+                              "text": "tblDokumentID is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Artikal Id",
+                              "component": "tblArtikalID",
+                              "name": "tblArtikalIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "tblArtikalID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tbldokumentstavki.tblArtikalID}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Normativ Id",
+                              "component": "tblNormativID",
+                              "name": "tblNormativIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "tblNormativID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tbldokumentstavki.tblNormativID}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Cena",
+                              "component": "Cena",
+                              "name": "CenaLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "decimal",
+                              "type": "numeric",
+                              "name": "Cena",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tbldokumentstavki.Cena}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "CenaRequiredValidator",
+                              "component": "Cena",
+                              "text": "Cena is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Kolicina",
+                              "component": "Kolicina",
+                              "name": "KolicinaLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "decimal",
+                              "type": "numeric",
+                              "name": "Kolicina",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tbldokumentstavki.Kolicina}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "KolicinaRequiredValidator",
+                              "component": "Kolicina",
+                              "text": "Kolicina is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Iznos",
+                              "component": "Iznos",
+                              "name": "IznosLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "decimal",
+                              "type": "numeric",
+                              "name": "Iznos",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tbldokumentstavki.Iznos}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "IznosRequiredValidator",
+                              "component": "Iznos",
+                              "text": "Iznos is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Rabat 1",
+                              "component": "Rabat1",
+                              "name": "Rabat1Label",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "decimal?",
+                              "type": "numeric",
+                              "name": "Rabat1",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tbldokumentstavki.Rabat1}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new TblDokumentStavki!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "BSSR4.createTblDokumentStavki",
+                        "parameters": [
+                          {
+                            "name": "TblDokumentStavki",
+                            "value": "${tbldokumentstavki}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${tbldokumentstavki}"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "data": "${tbldokumentstavki}",
+                  "visible": "${tbldokumentstavki != null}",
+                  "itemType": "Bssr.Models.Bssr4.TblDokumentStavki"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "BSSR4.getTblDokumentis",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblDokumentisFortblDokumentIDResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblDokumenti>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "tbldokumentstavki",
+        "type": "set",
+        "value": "new Bssr.Models.Bssr4.TblDokumentStavki(){}",
+        "valueType": "Bssr.Models.Bssr4.TblDokumentStavki"
+      }
+    ]
+  },
+  "name": "Add Tbl Dokument Stavki",
+  "layout": "Main"
+}

@@ -1,0 +1,65 @@
+﻿@page "/tbl-izvodi-stavki"
+@layout MainLayout
+@inherits Bssr.Pages.TblIzvodiStavkiComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Izvodi Stavki">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblIzvodiStavkisResult" TItem="Bssr.Models.Bssr4.TblIzvodiStavki" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="tblIzvodiID" SortProperty="TblIzvodi.BrojNaIzvod" FilterProperty="TblIzvodi.BrojNaIzvod" Title="Tbl Izvodi">
+              <Template Context="data">
+              @(data.TblIzvodi?.BrojNaIzvod)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="PartnerID" SortProperty="TblPartneri.Sifra" FilterProperty="TblPartneri.Sifra" Title="Tbl Partneri">
+              <Template Context="data">
+              @(data.TblPartneri?.Sifra)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="Dolzi" Title="Dolzi">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="Pobaruva" Title="Pobaruva">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="DokumentID" Title="Dokument ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="FakturaID" Title="Faktura ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="PriemID" Title="Priem ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="TipNaDokument" Title="Tip Na Dokument">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Property="BrojNaDokument" Title="Broj Na Dokument">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblIzvodiStavki" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblIzvodiStavki">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblIzvodiStavki))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

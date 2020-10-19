@@ -1,0 +1,367 @@
+﻿@page "/add-tbl-knizenje-m"
+@layout MainLayout
+@inherits Bssr.Pages.AddTblKnizenjeMComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@tblknizenjem" Visible="@(tblknizenjem != null)" TItem="Bssr.Models.Bssr4.TblKnizenjeM" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Normativ Id" Component="tblNormativID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.tblNormativID)" Name="TblNormativID">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Artikal Id" Component="tblArtikalID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.tblArtikalID)" Name="TblArtikalID">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tip Na Artikal" Component="tipNaArtikal" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.tipNaArtikal)" Name="TipNaArtikal">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="TipNaArtikal" Text="tipNaArtikal is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Prodazna Cena" Component="ProdaznaCena" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.ProdaznaCena)" Name="ProdaznaCena">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="ProdaznaCena" Text="ProdaznaCena is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Kolicina" Component="Kolicina" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.Kolicina)" Name="Kolicina">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Kolicina" Text="Kolicina is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Sifra" Component="Sifra" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="20" style="width: 100%" @bind-Value="@(tblknizenjem.Sifra)" Name="Sifra">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Edinecna Merka" Component="tblEdinecnaMerka" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.tblEdinecnaMerka)" Name="TblEdinecnaMerka">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="TblEdinecnaMerka" Text="tblEdinecnaMerka is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Ddvid" Component="tblDDVID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.tblDDVID)" Name="TblDDVID">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="TblDDVID" Text="tblDDVID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tip Na Knizenje" Component="tipNaKnizenje" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.tipNaKnizenje)" Name="TipNaKnizenje">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="TipNaKnizenje" Text="tipNaKnizenje is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Nabavna Cena" Component="NabavnaCena" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.NabavnaCena)" Name="NabavnaCena">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="NabavnaCena" Text="NabavnaCena is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Edinecna Cena" Component="EdinecnaCena" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.EdinecnaCena)" Name="EdinecnaCena">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Iznos So Ddv" Component="IznosSoDDV" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.IznosSoDDV)" Name="IznosSoDDV">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="IznosSoDDV" Text="IznosSoDDV is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Iznos Bez Ddv" Component="IznosBezDDV" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.IznosBezDDV)" Name="IznosBezDDV">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="IznosBezDDV" Text="IznosBezDDV is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Iznos Ddv" Component="IznosDDV" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.IznosDDV)" Name="IznosDDV">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="IznosDDV" Text="IznosDDV is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Datum Na Knizenje" Component="DatumNaKnizenje" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tblknizenjem.DatumNaKnizenje)" Name="DatumNaKnizenje">
+                </RadzenDatePicker>
+                <RadzenRequiredValidator Component="DatumNaKnizenje" Text="DatumNaKnizenje is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl User Id" Component="tblUserID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.tblUserID)" Name="TblUserID">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="TblUserID" Text="tblUserID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Objekti Id" Component="tblObjektiID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblknizenjem.tblObjektiID)" Name="TblObjektiID">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="TblObjektiID" Text="tblObjektiID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Datum Na Pocetok" Component="DatumNaPocetok" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tblknizenjem.DatumNaPocetok)" Name="DatumNaPocetok">
+                </RadzenDatePicker>
+                <RadzenRequiredValidator Component="DatumNaPocetok" Text="DatumNaPocetok is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Datum Na Kraj" Component="DatumNaKraj" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tblknizenjem.DatumNaKraj)" Name="DatumNaKraj">
+                </RadzenDatePicker>
+                <RadzenRequiredValidator Component="DatumNaKraj" Text="DatumNaKraj is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Smetka" Component="tblSmetkaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblSmetkasFortblSmetkaIDResult" TextProperty="Zabeleska" ValueProperty="ID" Placeholder="Choose TblSmetka" ShowSearch="false" style="width: 100%" @bind-Value="@(tblknizenjem.tblSmetkaID)" Name="TblSmetkaID">
+                </RadzenDropDownDataGrid>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Faktura" Component="tblFakturaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblFakturasFortblFakturaIDResult" TextProperty="Zabeleska" ValueProperty="ID" Placeholder="Choose TblFaktura" ShowSearch="false" style="width: 100%" @bind-Value="@(tblknizenjem.tblFakturaID)" Name="TblFakturaID">
+                </RadzenDropDownDataGrid>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Priem" Component="tblPriemID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblPriemsFortblPriemIDResult" TextProperty="IspratnicaFakturaBroj" ValueProperty="ID" Placeholder="Choose TblPriem" ShowSearch="false" style="width: 100%" @bind-Value="@(tblknizenjem.tblPriemID)" Name="TblPriemID">
+                </RadzenDropDownDataGrid>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Otpecatena Fiskalna" Component="OtpecatenaFiskalna" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.OtpecatenaFiskalna)" Name="OtpecatenaFiskalna">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Valuta Id" Component="tblValutaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.tblValutaID)" Name="TblValutaID">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Rabat" Component="Rabat" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.Rabat)" Name="Rabat">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Iznos Na Rabat" Component="IznosNaRabat" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.IznosNaRabat)" Name="IznosNaRabat">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Prodazna Cena So Rabat" Component="ProdaznaCenaSoRabat" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.ProdaznaCenaSoRabat)" Name="ProdaznaCenaSoRabat">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Objekti Idod" Component="tblObjektiIDOD" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.tblObjektiIDOD)" Name="TblObjektiIDOD">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Objekti Iddo" Component="tblObjektiIDDO" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblknizenjem.tblObjektiIDDO)" Name="TblObjektiIDDO">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Dokumenti" Component="tblDokumentID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblDokumentisFortblDokumentIDResult" TextProperty="Zabeleska" ValueProperty="ID" Placeholder="Choose TblDokumenti" ShowSearch="false" style="width: 100%" @bind-Value="@(tblknizenjem.tblDokumentID)" Name="TblDokumentID">
+                </RadzenDropDownDataGrid>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Kod Na Dokument" Component="KodNaDokument" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(tblknizenjem.KodNaDokument)" Name="KodNaDokument">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

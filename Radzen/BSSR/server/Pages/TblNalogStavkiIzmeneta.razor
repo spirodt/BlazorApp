@@ -1,0 +1,51 @@
+﻿@page "/tbl-nalog-stavki-izmeneta"
+@layout MainLayout
+@inherits Bssr.Pages.TblNalogStavkiIzmenetaComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Nalog Stavki Izmeneta">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblNalogStavkiIzmenetaResult" TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" Property="tblNalogIzmenetaID" Title="Tbl Nalog Izmeneta ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" Property="tblNomativID" Title="Tbl Nomativ ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" Property="tblArtikalID" Title="Tbl Artikal ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" Property="Kolicina" Title="Kolicina">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" Property="Rabat1" Title="Rabat 1">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogStavkiIzmenetum" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblNalogStavkiIzmenetum">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblNalogStavkiIzmenetum))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

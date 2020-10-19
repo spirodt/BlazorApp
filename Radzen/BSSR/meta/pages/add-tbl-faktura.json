@@ -1,0 +1,611 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Broj",
+                              "component": "Broj",
+                              "name": "BrojLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int",
+                              "type": "numeric",
+                              "name": "Broj",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.Broj}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "BrojRequiredValidator",
+                              "component": "Broj",
+                              "text": "Broj is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Datum",
+                              "component": "Datum",
+                              "name": "DatumLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "DateTime",
+                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
+                              "name": "Datum",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.Datum}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "DatumRequiredValidator",
+                              "component": "Datum",
+                              "text": "Datum is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Partneri",
+                              "component": "tblPartnerID",
+                              "name": "tblPartnerIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblPartnerisFortblPartnerIDResult}",
+                              "textProperty": "Sifra",
+                              "valueProperty": "ID",
+                              "placeholder": "Choose TblPartneri",
+                              "valueType": "int",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "tblPartnerID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.tblPartnerID}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "tblPartnerIDRequiredValidator",
+                              "component": "tblPartnerID",
+                              "text": "tblPartnerID is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Ziro Smetki",
+                              "component": "tblZiroSmetkaID",
+                              "name": "tblZiroSmetkaIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblZiroSmetkisFortblZiroSmetkaIDResult}",
+                              "textProperty": "ZiroSmetka",
+                              "valueProperty": "ID",
+                              "placeholder": "Choose TblZiroSmetki",
+                              "valueType": "int?",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "tblZiroSmetkaID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.tblZiroSmetkaID}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Banki",
+                              "component": "tblBankaID",
+                              "name": "tblBankaIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblBankisFortblBankaIDResult}",
+                              "textProperty": "Sifra",
+                              "valueProperty": "ID",
+                              "placeholder": "Choose TblBanki",
+                              "valueType": "int?",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "tblBankaID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.tblBankaID}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl User",
+                              "component": "tblUserID",
+                              "name": "tblUserIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblUsersFortblUserIDResult}",
+                              "textProperty": "UserName",
+                              "valueProperty": "ID",
+                              "placeholder": "Choose TblUser",
+                              "valueType": "int",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "tblUserID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.tblUserID}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "tblUserIDRequiredValidator",
+                              "component": "tblUserID",
+                              "text": "tblUserID is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Valuta",
+                              "component": "Valuta",
+                              "name": "ValutaLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "DateTime",
+                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
+                              "name": "Valuta",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.Valuta}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "ValutaRequiredValidator",
+                              "component": "Valuta",
+                              "text": "Valuta is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Zabeleska",
+                              "component": "Zabeleska",
+                              "name": "ZabeleskaLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "type": "textbox",
+                              "name": "Zabeleska",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.Zabeleska}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Lista Na Ispratnici",
+                              "component": "ListaNaIspratnici",
+                              "name": "ListaNaIspratniciLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 150,
+                              "type": "textbox",
+                              "name": "ListaNaIspratnici",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.ListaNaIspratnici}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Kod Na Dokument",
+                              "component": "KodNaDokument",
+                              "name": "KodNaDokumentLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 70,
+                              "type": "textbox",
+                              "name": "KodNaDokument",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblfaktura.KodNaDokument}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new TblFaktura!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "BSSR4.createTblFaktura",
+                        "parameters": [
+                          {
+                            "name": "TblFaktura",
+                            "value": "${tblfaktura}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${tblfaktura}"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "data": "${tblfaktura}",
+                  "visible": "${tblfaktura != null}",
+                  "itemType": "Bssr.Models.Bssr4.TblFaktura"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "BSSR4.getTblPartneris",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblPartnerisFortblPartnerIDResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblPartneri>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "BSSR4.getTblZiroSmetkis",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblZiroSmetkisFortblZiroSmetkaIDResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblZiroSmetki>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "BSSR4.getTblBankis",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblBankisFortblBankaIDResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblBanki>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "BSSR4.getTblUsers",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblUsersFortblUserIDResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblUser>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "tblfaktura",
+        "type": "set",
+        "value": "new Bssr.Models.Bssr4.TblFaktura(){}",
+        "valueType": "Bssr.Models.Bssr4.TblFaktura"
+      }
+    ]
+  },
+  "name": "Add Tbl Faktura",
+  "layout": "Main"
+}

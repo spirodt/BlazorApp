@@ -1,0 +1,105 @@
+﻿@page "/add-tbl-fiskalni-smetki"
+@layout MainLayout
+@inherits Bssr.Pages.AddTblFiskalniSmetkiComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@tblfiskalnismetki" Visible="@(tblfiskalnismetki != null)" TItem="Bssr.Models.Bssr4.TblFiskalniSmetki" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Broj" Component="Broj" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblfiskalnismetki.Broj)" Name="Broj">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Broj" Text="Broj is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Datum" Component="Datum" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@(tblfiskalnismetki.Datum)" Name="Datum">
+                </RadzenDatePicker>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Iznos" Component="Iznos" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblfiskalnismetki.Iznos)" Name="Iznos">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Iznos" Text="Iznos is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Stornirana" Component="Stornirana" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenCheckBox TriState="true" @bind-Value="@(tblfiskalnismetki.Stornirana)" Name="Stornirana">
+                </RadzenCheckBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Smetka" Component="tblSmetkaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblSmetkasFortblSmetkaIDResult" TextProperty="Zabeleska" ValueProperty="ID" Placeholder="Choose TblSmetka" ShowSearch="false" style="display: block; width: 100%" @bind-Value="@(tblfiskalnismetki.tblSmetkaID)" Name="TblSmetkaID">
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="TblSmetkaID" Text="tblSmetkaID is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Firma Id" Component="FirmaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblfiskalnismetki.FirmaID)" Name="FirmaID">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="FirmaID" Text="FirmaID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Kod Na Dokument" Component="KodNaDokument" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(tblfiskalnismetki.KodNaDokument)" Name="KodNaDokument">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

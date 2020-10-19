@@ -1,0 +1,54 @@
+﻿@page "/tbl-podgrupa-id"
+@layout MainLayout
+@inherits Bssr.Pages.TblPodgrupaIdComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Podgrupa ID">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblPodgrupaIdsResult" TItem="Bssr.Models.Bssr4.TblPodgrupaId" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblPodgrupaId" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblPodgrupaId" Property="GrupaID" SortProperty="TblGrupaNaArtikli.Naziv" FilterProperty="TblGrupaNaArtikli.Naziv" Title="Tbl Grupa Na Artikli">
+              <Template Context="data">
+              @(data.TblGrupaNaArtikli?.Naziv)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblPodgrupaId" Property="Naziv" Title="Naziv">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblPodgrupaId" Property="FirmaID" Title="Firma ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblPodgrupaId" Property="Status" Title="Status">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblPodgrupaId" Property="Image" Title="Image">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblPodgrupaId" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblPodgrupaId">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblPodgrupaId))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

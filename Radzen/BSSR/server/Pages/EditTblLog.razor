@@ -1,0 +1,73 @@
+﻿@page "/edit-tbl-log/{ID}"
+@layout MainLayout
+@inherits Bssr.Pages.EditTblLogComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm TItem="Bssr.Models.Bssr4.TblLog" Data="@tbllog" Visible="@(tbllog != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Sesija" Component="Sesija" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblSesijasForSesijaResult" TextProperty="Sesija" ValueProperty="Sesija" Placeholder="Choose TblSesija" ShowSearch="false" style="display: block; width: 100%" @bind-Value="@(tbllog.Sesija)" Name="Sesija">
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="Sesija" Text="Sesija is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Akcija" Component="Akcija" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox style="display: block; width: 100%" @bind-Value="@(tbllog.Akcija)" Name="Akcija">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Akcija" Text="Akcija is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Datum I Vreme" Component="DatumIVreme" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tbllog.DatumIVreme)" Name="DatumIVreme">
+                </RadzenDatePicker>
+                <RadzenRequiredValidator Component="DatumIVreme" Text="DatumIVreme is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Status" Component="Status" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tbllog.Status)" Name="Status">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

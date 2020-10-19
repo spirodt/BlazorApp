@@ -1,0 +1,69 @@
+﻿@page "/tbl-dokumenti"
+@layout MainLayout
+@inherits Bssr.Pages.TblDokumentiComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Dokumenti">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblDokumentisResult" TItem="Bssr.Models.Bssr4.TblDokumenti" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="Broj" Title="Broj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="TipNaDokument" SortProperty="TblTipNaDokument.Naziv" FilterProperty="TblTipNaDokument.Naziv" Title="Tbl Tip Na Dokument">
+              <Template Context="data">
+              @(data.TblTipNaDokument?.Naziv)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="Datum" FormatString="{0:MM/dd/yyyy}" Title="Datum">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="OdObjektID" Title="Od Objekt ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="DoObjektID" Title="Do Objekt ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="tblUserID" Title="Tbl User ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="Zabeleska" Title="Zabeleska">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="tblPartnerID" SortProperty="TblPartneri.Sifra" FilterProperty="TblPartneri.Sifra" Title="Tbl Partneri">
+              <Template Context="data">
+              @(data.TblPartneri?.Sifra)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="FirmaID" Title="Firma ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="KodNaDokument" Title="Kod Na Dokument">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Property="BrojNaDokument" Title="Broj Na Dokument">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblDokumenti" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblDokumenti">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblDokumenti))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

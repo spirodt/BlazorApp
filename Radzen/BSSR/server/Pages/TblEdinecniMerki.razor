@@ -1,0 +1,49 @@
+﻿@page "/tbl-edinecni-merki"
+@layout MainLayout
+@inherits Bssr.Pages.TblEdinecniMerkiComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Edinecni Merki">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblEdinecniMerkisResult" TItem="Bssr.Models.Bssr4.TblEdinecniMerki" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblEdinecniMerki" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblEdinecniMerki" Property="Naziv" Title="Naziv">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblEdinecniMerki" Property="Kratenka" Title="Kratenka">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblEdinecniMerki" Property="FirmaID" Title="Firma ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblEdinecniMerki" Property="Status" Title="Status">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblEdinecniMerki" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblEdinecniMerki">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblEdinecniMerki))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

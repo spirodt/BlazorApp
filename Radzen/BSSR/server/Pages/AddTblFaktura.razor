@@ -1,0 +1,137 @@
+﻿@page "/add-tbl-faktura"
+@layout MainLayout
+@inherits Bssr.Pages.AddTblFakturaComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@tblfaktura" Visible="@(tblfaktura != null)" TItem="Bssr.Models.Bssr4.TblFaktura" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Broj" Component="Broj" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblfaktura.Broj)" Name="Broj">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Broj" Text="Broj is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Datum" Component="Datum" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tblfaktura.Datum)" Name="Datum">
+                </RadzenDatePicker>
+                <RadzenRequiredValidator Component="Datum" Text="Datum is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Partneri" Component="tblPartnerID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblPartnerisFortblPartnerIDResult" TextProperty="Sifra" ValueProperty="ID" Placeholder="Choose TblPartneri" ShowSearch="false" style="display: block; width: 100%" @bind-Value="@(tblfaktura.tblPartnerID)" Name="TblPartnerID">
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="TblPartnerID" Text="tblPartnerID is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Ziro Smetki" Component="tblZiroSmetkaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblZiroSmetkisFortblZiroSmetkaIDResult" TextProperty="ZiroSmetka" ValueProperty="ID" Placeholder="Choose TblZiroSmetki" ShowSearch="false" style="width: 100%" @bind-Value="@(tblfaktura.tblZiroSmetkaID)" Name="TblZiroSmetkaID">
+                </RadzenDropDownDataGrid>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Banki" Component="tblBankaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblBankisFortblBankaIDResult" TextProperty="Sifra" ValueProperty="ID" Placeholder="Choose TblBanki" ShowSearch="false" style="width: 100%" @bind-Value="@(tblfaktura.tblBankaID)" Name="TblBankaID">
+                </RadzenDropDownDataGrid>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl User" Component="tblUserID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblUsersFortblUserIDResult" TextProperty="UserName" ValueProperty="ID" Placeholder="Choose TblUser" ShowSearch="false" style="display: block; width: 100%" @bind-Value="@(tblfaktura.tblUserID)" Name="TblUserID">
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="TblUserID" Text="tblUserID is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Valuta" Component="Valuta" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tblfaktura.Valuta)" Name="Valuta">
+                </RadzenDatePicker>
+                <RadzenRequiredValidator Component="Valuta" Text="Valuta is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Zabeleska" Component="Zabeleska" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox style="width: 100%" @bind-Value="@(tblfaktura.Zabeleska)" Name="Zabeleska">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Lista Na Ispratnici" Component="ListaNaIspratnici" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="150" style="width: 100%" @bind-Value="@(tblfaktura.ListaNaIspratnici)" Name="ListaNaIspratnici">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Kod Na Dokument" Component="KodNaDokument" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(tblfaktura.KodNaDokument)" Name="KodNaDokument">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

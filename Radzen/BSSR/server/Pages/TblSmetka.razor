@@ -1,0 +1,81 @@
+﻿@page "/tbl-smetka"
+@layout MainLayout
+@inherits Bssr.Pages.TblSmetkaComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Smetka">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblSmetkasResult" TItem="Bssr.Models.Bssr4.TblSmetka" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="Broj" Title="Broj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="DatumPocetok" FormatString="{0:MM/dd/yyyy}" Title="Datum Pocetok">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="DatumKraj" FormatString="{0:MM/dd/yyyy}" Title="Datum Kraj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="tblUserID" SortProperty="TblUser.UserName" FilterProperty="TblUser.UserName" Title="Tbl User">
+              <Template Context="data">
+              @(data.TblUser?.UserName)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="Smena_ID" Title="Smena ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="Zatvorena" Title="Zatvorena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="FirmaID" SortProperty="TblFirma.ImeNaFirma" FilterProperty="TblFirma.ImeNaFirma" Title="Tbl Firma">
+              <Template Context="data">
+              @(data.TblFirma?.ImeNaFirma)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="ObjektID" SortProperty="TblObjekti.Naziv" FilterProperty="TblObjekti.Naziv" Title="Tbl Objekti">
+              <Template Context="data">
+              @(data.TblObjekti?.Naziv)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="Zabeleska" Title="Zabeleska">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="ImaPopust" Title="Ima Popust">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="ProcentNaPopust" Title="Procent Na Popust">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="Izmeneta" Title="Izmeneta">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="tblPartnerID" SortProperty="TblPartneri.Sifra" FilterProperty="TblPartneri.Sifra" Title="Tbl Partneri">
+              <Template Context="data">
+              @(data.TblPartneri?.Sifra)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Property="KodNaDokument" Title="Kod Na Dokument">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblSmetka" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblSmetka">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblSmetka))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

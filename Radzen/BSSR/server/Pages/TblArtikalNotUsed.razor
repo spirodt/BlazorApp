@@ -1,0 +1,83 @@
+﻿@page "/tbl-artikal-not-used"
+@layout MainLayout
+@inherits Bssr.Pages.TblArtikalNotUsedComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Artikal Not Used">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenSplitButton Icon="get_app" style="margin-left: 0px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblArtikalNotUsedsResult" TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" PageSize="20">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="Sifra" Title="Sifra">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="Naziv" Title="Naziv">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="tblDDVStavkaID" Title="Tbl DDV Stavka ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="PodgrupaID" Title="Podgrupa ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="tblEdinecniMerkiID" Title="Tbl Edinecni Merki ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="AltNaziv" Title="Alt Naziv">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="AltSifra" Title="Alt Sifra">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="KlucniZborovi" Title="Klucni Zborovi">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="NabavnaCena" Title="Nabavna Cena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="ProdaznaCena" Title="Prodazna Cena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="FirmaID" Title="Firma ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="Status" Title="Status">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="EDMIzlez" Title="EDM Izlez">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="KolicinaT" Title="Kolicina T">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="MinimalnaKolicinaNaZaliha" Title="Minimalna Kolicina Na Zaliha">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="RedenBroj" Title="Reden Broj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="Barkod1" Title="Barkod 1">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="Barkod2" Title="Barkod 2">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="AltNaziv2" Title="Alt Naziv 2">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="Image" Title="Image">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="SePecatiVoKujna" Title="Se Pecati Vo Kujna">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="SePacatiNaSank" Title="Se Pacati Na Sank">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="DenoviZaGarancija" Title="Denovi Za Garancija">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="DomasenProizvod" Title="Domasen Proizvod">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikalNotUsed" Property="CenaNaGolemo" Title="Cena Na Golemo">
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

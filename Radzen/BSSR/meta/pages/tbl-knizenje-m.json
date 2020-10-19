@@ -1,0 +1,405 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Tbl Knizenje M"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "add-tbl-knizenje-m",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "condition": "${event?.Value == \"csv\"}",
+                        "fileName": "Tbl Knizenje M",
+                        "name": "BSSR4.getTblKnizenjeMs",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          }
+                        ],
+                        "type": "export"
+                      },
+                      {
+                        "condition": "${event?.Value == \"xlsx\"}",
+                        "fileName": "Tbl Knizenje M",
+                        "format": "xlsx",
+                        "name": "BSSR4.getTblKnizenjeMs",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          }
+                        ],
+                        "type": "export"
+                      }
+                    ]
+                  },
+                  "icon": "get_app",
+                  "items": [
+                    {
+                      "icon": "",
+                      "text": "Excel",
+                      "value": "xlsx"
+                    },
+                    {
+                      "icon": "",
+                      "text": "CSV",
+                      "value": "csv"
+                    }
+                  ],
+                  "name": "splitbutton0",
+                  "style": {
+                    "marginLeft": "10px",
+                    "marginBottom": "10px"
+                  },
+                  "text": "Export",
+                  "type": "splitbutton"
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "@oninput",
+                      "value": "@(async(args) => {search = $\"{args.Value}\";await Load();})"
+                    }
+                  ],
+                  "name": "textbox0",
+                  "placeholder": "Search ...",
+                  "style": {
+                    "display": "block",
+                    "marginBottom": "10px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getTblKnizenjeMsResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowSelect": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "ID",
+                            "value": "${event.ID}"
+                          }
+                        ],
+                        "path": "edit-tbl-knizenje-m",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "ID",
+                      "title": "ID"
+                    },
+                    {
+                      "property": "tblNormativID",
+                      "title": "Tbl Normativ ID"
+                    },
+                    {
+                      "property": "tblArtikalID",
+                      "title": "Tbl Artikal ID"
+                    },
+                    {
+                      "property": "tipNaArtikal",
+                      "title": "Tip Na Artikal"
+                    },
+                    {
+                      "property": "ProdaznaCena",
+                      "title": "Prodazna Cena"
+                    },
+                    {
+                      "property": "Kolicina",
+                      "title": "Kolicina"
+                    },
+                    {
+                      "property": "Sifra",
+                      "title": "Sifra"
+                    },
+                    {
+                      "property": "tblEdinecnaMerka",
+                      "title": "Tbl Edinecna Merka"
+                    },
+                    {
+                      "property": "tblDDVID",
+                      "title": "Tbl DDVID"
+                    },
+                    {
+                      "property": "tipNaKnizenje",
+                      "title": "Tip Na Knizenje"
+                    },
+                    {
+                      "property": "NabavnaCena",
+                      "title": "Nabavna Cena"
+                    },
+                    {
+                      "property": "EdinecnaCena",
+                      "title": "Edinecna Cena"
+                    },
+                    {
+                      "property": "IznosSoDDV",
+                      "title": "Iznos So DDV"
+                    },
+                    {
+                      "property": "IznosBezDDV",
+                      "title": "Iznos Bez DDV"
+                    },
+                    {
+                      "property": "IznosDDV",
+                      "title": "Iznos DDV"
+                    },
+                    {
+                      "property": "DatumNaKnizenje",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Datum Na Knizenje"
+                    },
+                    {
+                      "property": "tblUserID",
+                      "title": "Tbl User ID"
+                    },
+                    {
+                      "property": "tblObjektiID",
+                      "title": "Tbl Objekti ID"
+                    },
+                    {
+                      "property": "DatumNaPocetok",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Datum Na Pocetok"
+                    },
+                    {
+                      "property": "DatumNaKraj",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Datum Na Kraj"
+                    },
+                    {
+                      "property": "tblSmetkaID",
+                      "sortProperty": "TblSmetka.Zabeleska",
+                      "filterProperty": "TblSmetka.Zabeleska",
+                      "template": "${data.TblSmetka?.Zabeleska}",
+                      "title": "Tbl Smetka"
+                    },
+                    {
+                      "property": "tblFakturaID",
+                      "sortProperty": "TblFaktura.Zabeleska",
+                      "filterProperty": "TblFaktura.Zabeleska",
+                      "template": "${data.TblFaktura?.Zabeleska}",
+                      "title": "Tbl Faktura"
+                    },
+                    {
+                      "property": "tblPriemID",
+                      "sortProperty": "TblPriem.IspratnicaFakturaBroj",
+                      "filterProperty": "TblPriem.IspratnicaFakturaBroj",
+                      "template": "${data.TblPriem?.IspratnicaFakturaBroj}",
+                      "title": "Tbl Priem"
+                    },
+                    {
+                      "property": "OtpecatenaFiskalna",
+                      "title": "Otpecatena Fiskalna"
+                    },
+                    {
+                      "property": "tblValutaID",
+                      "title": "Tbl Valuta ID"
+                    },
+                    {
+                      "property": "Rabat",
+                      "title": "Rabat"
+                    },
+                    {
+                      "property": "IznosNaRabat",
+                      "title": "Iznos Na Rabat"
+                    },
+                    {
+                      "property": "ProdaznaCenaSoRabat",
+                      "title": "Prodazna Cena So Rabat"
+                    },
+                    {
+                      "property": "tblObjektiIDOD",
+                      "title": "Tbl Objekti IDOD"
+                    },
+                    {
+                      "property": "tblObjektiIDDO",
+                      "title": "Tbl Objekti IDDO"
+                    },
+                    {
+                      "property": "tblDokumentID",
+                      "sortProperty": "TblDokumenti.Zabeleska",
+                      "filterProperty": "TblDokumenti.Zabeleska",
+                      "template": "${data.TblDokumenti?.Zabeleska}",
+                      "title": "Tbl Dokumenti"
+                    },
+                    {
+                      "property": "KodNaDokument",
+                      "title": "Kod Na Dokument"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "width": "70px",
+                      "textAlign": "center",
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "@onclick:stopPropagation",
+                              "value": true
+                            }
+                          ],
+                          "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete TblKnizenjeM",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "BSSR4.deleteTblKnizenjeM",
+                                "parameters": [
+                                  {
+                                    "name": "ID",
+                                    "value": "${data.ID}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "grid",
+                  "itemType": "Bssr.Models.Bssr4.TblKnizenjeM",
+                  "pageSize": 20
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "condition": "string.IsNullOrEmpty(search)",
+        "name": "search",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "BSSR4.getTblKnizenjeMs",
+        "parameters": [
+          {
+            "name": "$filter",
+            "operator": "or",
+            "value": [
+              {
+                "operation": "contains",
+                "property": "Sifra",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "KodNaDokument",
+                "type": "string",
+                "value": "\"${search}\""
+              }
+            ]
+          }
+        ],
+        "then": [
+          {
+            "name": "getTblKnizenjeMsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblKnizenjeM>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Tbl Knizenje M",
+  "layout": "Main"
+}

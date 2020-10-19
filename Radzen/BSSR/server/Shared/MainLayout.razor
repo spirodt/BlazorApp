@@ -1,0 +1,149 @@
+﻿@inherits Bssr.Layouts.MainLayoutComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+<RadzenContextMenu />
+
+<RadzenHeader>
+  <ChildContent>
+    <div class="row justify-content-start align-items-center">
+      <div class="col-md-6 d-flex align-items-center">
+        <RadzenSidebarToggle Click="@SidebarToggle0Click">
+        </RadzenSidebarToggle>
+        <RadzenLabel Text="BSSR">
+        </RadzenLabel>
+      </div>
+      <div class="col-md-6 text-lg-right">
+      </div>
+    </div>
+  </ChildContent>
+</RadzenHeader>
+<RadzenBody @ref="body0">
+  <ChildContent>
+    <RadzenContentContainer Name="main">
+    @Body
+    </RadzenContentContainer>
+  </ChildContent>
+</RadzenBody>
+<RadzenSidebar @ref="sidebar0">
+  <ChildContent>
+    <RadzenPanelMenu style="height: 100%">
+      <ChildContent>
+        <RadzenPanelMenuItem Text="Changelog" Path="changelog">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Db Version" Path="db-version">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Mat" Path="mat">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Mat Kujna" Path="mat-kujna">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Akcija Na Artikal" Path="tbl-akcija-na-artikal">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Artikal" Path="tbl-artikal">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Artikal Not Used" Path="tbl-artikal-not-used">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Banki" Path="tbl-banki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Config" Path="tbl-config">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl DDV Stavka" Path="tbl-ddv-stavka">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Dokument Stavki" Path="tbl-dokument-stavki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Dokumenti" Path="tbl-dokumenti">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Edinecni Merki" Path="tbl-edinecni-merki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Elektronsko Pracanje" Path="tbl-elektronsko-pracanje">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Faktura" Path="tbl-faktura">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Faktura Stavki" Path="tbl-faktura-stavki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Firma" Path="tbl-firma">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Fiskalni Smetki" Path="tbl-fiskalni-smetki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Grupa Na Artikli" Path="tbl-grupa-na-artikli">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Izvodi" Path="tbl-izvodi">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Izvodi Stavki" Path="tbl-izvodi-stavki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Knizenje M" Path="tbl-knizenje-m">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Kursna Lista" Path="tbl-kursna-lista">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Log" Path="tbl-log">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Nalog" Path="tbl-nalog">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Nalog Izmeneta" Path="tbl-nalog-izmeneta">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Nalog Stavki" Path="tbl-nalog-stavki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Nalog Stavki Izmeneta" Path="tbl-nalog-stavki-izmeneta">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Naracki" Path="tbl-naracki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Network PC" Path="tbl-network-pc">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Network PCLOG" Path="tbl-network-pclog">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Normativ" Path="tbl-normativ">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Normativ Stavki" Path="tbl-normativ-stavki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Objekti" Path="tbl-objekti">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Partneri" Path="tbl-partneri">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Podgrupa ID" Path="tbl-podgrupa-id">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Presmetkovni Edinici" Path="tbl-presmetkovni-edinici">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Prevodi" Path="tbl-prevodi">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Priem" Path="tbl-priem">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Priem Stavki" Path="tbl-priem-stavki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Sesija" Path="tbl-sesija">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Smetka" Path="tbl-smetka">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Smetka Izmeneta" Path="tbl-smetka-izmeneta">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Smetka Stavki" Path="tbl-smetka-stavki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Smetka Stavki Izmeneta" Path="tbl-smetka-stavki-izmeneta">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Tip Na Dokument" Path="tbl-tip-na-dokument">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Users" Path="tbl-users">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl User Configs" Path="tbl-user-configs">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Valuti" Path="tbl-valuti">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Zabeleshki" Path="tbl-zabeleshki">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Zaliha Na Artikli" Path="tbl-zaliha-na-artikli">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Text="Tbl Ziro Smetki" Path="tbl-ziro-smetki">
+        </RadzenPanelMenuItem>
+      </ChildContent>
+    </RadzenPanelMenu>
+  </ChildContent>
+</RadzenSidebar>
+<RadzenFooter>
+  <ChildContent>
+    <RadzenLabel Text="BSSR, Copyright Ⓒ 2020">
+    </RadzenLabel>
+  </ChildContent>
+</RadzenFooter>

@@ -1,0 +1,206 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Tbl Nalog Izmeneta"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "condition": "${event?.Value == \"csv\"}",
+                        "fileName": "Tbl Nalog Izmeneta",
+                        "name": "BSSR4.getTblNalogIzmeneta",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          }
+                        ],
+                        "type": "export"
+                      },
+                      {
+                        "condition": "${event?.Value == \"xlsx\"}",
+                        "fileName": "Tbl Nalog Izmeneta",
+                        "format": "xlsx",
+                        "name": "BSSR4.getTblNalogIzmeneta",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          }
+                        ],
+                        "type": "export"
+                      }
+                    ]
+                  },
+                  "icon": "get_app",
+                  "items": [
+                    {
+                      "icon": "",
+                      "text": "Excel",
+                      "value": "xlsx"
+                    },
+                    {
+                      "icon": "",
+                      "text": "CSV",
+                      "value": "csv"
+                    }
+                  ],
+                  "name": "splitbutton0",
+                  "style": {
+                    "marginLeft": "0px",
+                    "marginBottom": "10px"
+                  },
+                  "text": "Export",
+                  "type": "splitbutton"
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "@oninput",
+                      "value": "@(async(args) => {search = $\"{args.Value}\";await Load();})"
+                    }
+                  ],
+                  "name": "textbox0",
+                  "placeholder": "Search ...",
+                  "style": {
+                    "display": "block",
+                    "marginBottom": "10px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getTblNalogIzmenetaResult}",
+                  "events": {
+                    "loadData": []
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "ID",
+                      "title": "ID"
+                    },
+                    {
+                      "property": "Broj",
+                      "title": "Broj"
+                    },
+                    {
+                      "property": "Zabeleska",
+                      "title": "Zabeleska"
+                    },
+                    {
+                      "property": "DatumPocetok",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Datum Pocetok"
+                    },
+                    {
+                      "property": "DatumKraj",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Datum Kraj"
+                    },
+                    {
+                      "property": "FirmaID",
+                      "title": "Firma ID"
+                    },
+                    {
+                      "property": "Smena_ID",
+                      "title": "Smena ID"
+                    },
+                    {
+                      "property": "Zavrsen",
+                      "title": "Zavrsen"
+                    },
+                    {
+                      "property": "TipNaNalog",
+                      "title": "Tip Na Nalog"
+                    },
+                    {
+                      "property": "SmetkaID",
+                      "title": "Smetka ID"
+                    },
+                    {
+                      "property": "DatumNaIzmena",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Datum Na Izmena"
+                    }
+                  ],
+                  "type": "grid",
+                  "itemType": "Bssr.Models.Bssr4.TblNalogIzmenetum",
+                  "pageSize": 20
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "condition": "string.IsNullOrEmpty(search)",
+        "name": "search",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "BSSR4.getTblNalogIzmeneta",
+        "parameters": [
+          {
+            "name": "$filter",
+            "operator": "or",
+            "value": [
+              {
+                "operation": "contains",
+                "property": "Zabeleska",
+                "type": "string",
+                "value": "\"${search}\""
+              }
+            ]
+          }
+        ],
+        "then": [
+          {
+            "name": "getTblNalogIzmenetaResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblNalogIzmenetum>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Tbl Nalog Izmeneta",
+  "layout": "Main"
+}

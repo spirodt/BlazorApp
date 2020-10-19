@@ -1,0 +1,311 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Tbl Artikal Not Used"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "condition": "${event?.Value == \"csv\"}",
+                        "fileName": "Tbl Artikal Not Used",
+                        "name": "BSSR4.getTblArtikalNotUseds",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          }
+                        ],
+                        "type": "export"
+                      },
+                      {
+                        "condition": "${event?.Value == \"xlsx\"}",
+                        "fileName": "Tbl Artikal Not Used",
+                        "format": "xlsx",
+                        "name": "BSSR4.getTblArtikalNotUseds",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          }
+                        ],
+                        "type": "export"
+                      }
+                    ]
+                  },
+                  "icon": "get_app",
+                  "items": [
+                    {
+                      "icon": "",
+                      "text": "Excel",
+                      "value": "xlsx"
+                    },
+                    {
+                      "icon": "",
+                      "text": "CSV",
+                      "value": "csv"
+                    }
+                  ],
+                  "name": "splitbutton0",
+                  "style": {
+                    "marginLeft": "0px",
+                    "marginBottom": "10px"
+                  },
+                  "text": "Export",
+                  "type": "splitbutton"
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "@oninput",
+                      "value": "@(async(args) => {search = $\"{args.Value}\";await Load();})"
+                    }
+                  ],
+                  "name": "textbox0",
+                  "placeholder": "Search ...",
+                  "style": {
+                    "display": "block",
+                    "marginBottom": "10px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getTblArtikalNotUsedsResult}",
+                  "events": {
+                    "loadData": []
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "ID",
+                      "title": "ID"
+                    },
+                    {
+                      "property": "Sifra",
+                      "title": "Sifra"
+                    },
+                    {
+                      "property": "Naziv",
+                      "title": "Naziv"
+                    },
+                    {
+                      "property": "tblDDVStavkaID",
+                      "title": "Tbl DDV Stavka ID"
+                    },
+                    {
+                      "property": "PodgrupaID",
+                      "title": "Podgrupa ID"
+                    },
+                    {
+                      "property": "tblEdinecniMerkiID",
+                      "title": "Tbl Edinecni Merki ID"
+                    },
+                    {
+                      "property": "AltNaziv",
+                      "title": "Alt Naziv"
+                    },
+                    {
+                      "property": "AltSifra",
+                      "title": "Alt Sifra"
+                    },
+                    {
+                      "property": "KlucniZborovi",
+                      "title": "Klucni Zborovi"
+                    },
+                    {
+                      "property": "NabavnaCena",
+                      "title": "Nabavna Cena"
+                    },
+                    {
+                      "property": "ProdaznaCena",
+                      "title": "Prodazna Cena"
+                    },
+                    {
+                      "property": "FirmaID",
+                      "title": "Firma ID"
+                    },
+                    {
+                      "property": "Status",
+                      "title": "Status"
+                    },
+                    {
+                      "property": "EDMIzlez",
+                      "title": "EDM Izlez"
+                    },
+                    {
+                      "property": "KolicinaT",
+                      "title": "Kolicina T"
+                    },
+                    {
+                      "property": "MinimalnaKolicinaNaZaliha",
+                      "title": "Minimalna Kolicina Na Zaliha"
+                    },
+                    {
+                      "property": "RedenBroj",
+                      "title": "Reden Broj"
+                    },
+                    {
+                      "property": "Barkod1",
+                      "title": "Barkod 1"
+                    },
+                    {
+                      "property": "Barkod2",
+                      "title": "Barkod 2"
+                    },
+                    {
+                      "property": "AltNaziv2",
+                      "title": "Alt Naziv 2"
+                    },
+                    {
+                      "property": "Image",
+                      "title": "Image"
+                    },
+                    {
+                      "property": "SePecatiVoKujna",
+                      "title": "Se Pecati Vo Kujna"
+                    },
+                    {
+                      "property": "SePacatiNaSank",
+                      "title": "Se Pacati Na Sank"
+                    },
+                    {
+                      "property": "DenoviZaGarancija",
+                      "title": "Denovi Za Garancija"
+                    },
+                    {
+                      "property": "DomasenProizvod",
+                      "title": "Domasen Proizvod"
+                    },
+                    {
+                      "property": "CenaNaGolemo",
+                      "title": "Cena Na Golemo"
+                    }
+                  ],
+                  "type": "grid",
+                  "itemType": "Bssr.Models.Bssr4.TblArtikalNotUsed",
+                  "pageSize": 20
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "condition": "string.IsNullOrEmpty(search)",
+        "name": "search",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "BSSR4.getTblArtikalNotUseds",
+        "parameters": [
+          {
+            "name": "$filter",
+            "operator": "or",
+            "value": [
+              {
+                "operation": "contains",
+                "property": "Sifra",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Naziv",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "AltNaziv",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "AltSifra",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "KlucniZborovi",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Barkod1",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Barkod2",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "AltNaziv2",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Image",
+                "type": "string",
+                "value": "\"${search}\""
+              }
+            ]
+          }
+        ],
+        "then": [
+          {
+            "name": "getTblArtikalNotUsedsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblArtikalNotUsed>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Tbl Artikal Not Used",
+  "layout": "Main"
+}

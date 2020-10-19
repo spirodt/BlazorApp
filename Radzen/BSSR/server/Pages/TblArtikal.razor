@@ -1,0 +1,103 @@
+﻿@page "/tbl-artikal"
+@layout MainLayout
+@inherits Bssr.Pages.TblArtikalComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Artikal">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblArtikalsResult" TItem="Bssr.Models.Bssr4.TblArtikal" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="Sifra" Title="Sifra">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="Naziv" Title="Naziv">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="tblDDVStavkaID" SortProperty="TblDdvStavka.Naziv" FilterProperty="TblDdvStavka.Naziv" Title="Tbl Ddv Stavka">
+              <Template Context="data">
+              @(data.TblDdvStavka?.Naziv)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="PodgrupaID" SortProperty="TblPodgrupaId.Naziv" FilterProperty="TblPodgrupaId.Naziv" Title="Tbl Podgrupa Id">
+              <Template Context="data">
+              @(data.TblPodgrupaId?.Naziv)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="tblEdinecniMerkiID" SortProperty="TblEdinecniMerki.Naziv" FilterProperty="TblEdinecniMerki.Naziv" Title="Tbl Edinecni Merki">
+              <Template Context="data">
+              @(data.TblEdinecniMerki?.Naziv)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="AltNaziv" Title="Alt Naziv">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="AltSifra" Title="Alt Sifra">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="KlucniZborovi" Title="Klucni Zborovi">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="NabavnaCena" Title="Nabavna Cena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="ProdaznaCena" Title="Prodazna Cena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="FirmaID" SortProperty="TblFirma.ImeNaFirma" FilterProperty="TblFirma.ImeNaFirma" Title="Tbl Firma">
+              <Template Context="data">
+              @(data.TblFirma?.ImeNaFirma)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="Status" Title="Status">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="EDMIzlez" Title="EDM Izlez">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="KolicinaT" Title="Kolicina T">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="MinimalnaKolicinaNaZaliha" Title="Minimalna Kolicina Na Zaliha">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="RedenBroj" Title="Reden Broj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="Barkod1" Title="Barkod 1">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="Barkod2" Title="Barkod 2">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="AltNaziv2" Title="Alt Naziv 2">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="Image" Title="Image">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="SePecatiVoKujna" Title="Se Pecati Vo Kujna">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="SePacatiNaSank" Title="Se Pacati Na Sank">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="DenoviZaGarancija" Title="Denovi Za Garancija">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="DomasenProizvod" Title="Domasen Proizvod">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Property="CenaNaGolemo" Title="Cena Na Golemo">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblArtikal" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblArtikal">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblArtikal))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

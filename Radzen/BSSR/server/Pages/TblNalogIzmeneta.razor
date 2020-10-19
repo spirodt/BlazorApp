@@ -1,0 +1,53 @@
+﻿@page "/tbl-nalog-izmeneta"
+@layout MainLayout
+@inherits Bssr.Pages.TblNalogIzmenetaComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Nalog Izmeneta">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenSplitButton Icon="get_app" style="margin-left: 0px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblNalogIzmenetaResult" TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" PageSize="20">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="Broj" Title="Broj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="Zabeleska" Title="Zabeleska">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="DatumPocetok" FormatString="{0:MM/dd/yyyy}" Title="Datum Pocetok">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="DatumKraj" FormatString="{0:MM/dd/yyyy}" Title="Datum Kraj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="FirmaID" Title="Firma ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="Smena_ID" Title="Smena ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="Zavrsen" Title="Zavrsen">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="TipNaNalog" Title="Tip Na Nalog">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="SmetkaID" Title="Smetka ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblNalogIzmenetum" Property="DatumNaIzmena" FormatString="{0:MM/dd/yyyy}" Title="Datum Na Izmena">
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

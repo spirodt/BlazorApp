@@ -1,0 +1,534 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Izvodi",
+                              "component": "tblIzvodiID",
+                              "name": "tblIzvodiIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblIzvodisFortblIzvodiIDResult}",
+                              "textProperty": "BrojNaIzvod",
+                              "valueProperty": "ID",
+                              "placeholder": "Choose TblIzvodi",
+                              "valueType": "int",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "tblIzvodiID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.tblIzvodiID}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "tblIzvodiIDRequiredValidator",
+                              "component": "tblIzvodiID",
+                              "text": "tblIzvodiID is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tbl Partneri",
+                              "component": "PartnerID",
+                              "name": "PartnerIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblPartnerisForPartnerIDResult}",
+                              "textProperty": "Sifra",
+                              "valueProperty": "ID",
+                              "placeholder": "Choose TblPartneri",
+                              "valueType": "int",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "PartnerID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.PartnerID}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "PartnerIDRequiredValidator",
+                              "component": "PartnerID",
+                              "text": "PartnerID is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Dolzi",
+                              "component": "Dolzi",
+                              "name": "DolziLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "decimal",
+                              "type": "numeric",
+                              "name": "Dolzi",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.Dolzi}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "DolziRequiredValidator",
+                              "component": "Dolzi",
+                              "text": "Dolzi is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Pobaruva",
+                              "component": "Pobaruva",
+                              "name": "PobaruvaLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "decimal",
+                              "type": "numeric",
+                              "name": "Pobaruva",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.Pobaruva}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "PobaruvaRequiredValidator",
+                              "component": "Pobaruva",
+                              "text": "Pobaruva is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Dokument Id",
+                              "component": "DokumentID",
+                              "name": "DokumentIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "DokumentID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.DokumentID}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Faktura Id",
+                              "component": "FakturaID",
+                              "name": "FakturaIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "FakturaID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.FakturaID}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Priem Id",
+                              "component": "PriemID",
+                              "name": "PriemIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "PriemID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.PriemID}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tip Na Dokument",
+                              "component": "TipNaDokument",
+                              "name": "TipNaDokumentLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "TipNaDokument",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.TipNaDokument}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Broj Na Dokument",
+                              "component": "BrojNaDokument",
+                              "name": "BrojNaDokumentLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 150,
+                              "type": "textbox",
+                              "name": "BrojNaDokument",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${tblizvodistavki.BrojNaDokument}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "BrojNaDokumentRequiredValidator",
+                              "component": "BrojNaDokument",
+                              "text": "BrojNaDokument is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new TblIzvodiStavki!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "BSSR4.createTblIzvodiStavki",
+                        "parameters": [
+                          {
+                            "name": "TblIzvodiStavki",
+                            "value": "${tblizvodistavki}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${tblizvodistavki}"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "data": "${tblizvodistavki}",
+                  "visible": "${tblizvodistavki != null}",
+                  "itemType": "Bssr.Models.Bssr4.TblIzvodiStavki"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "BSSR4.getTblIzvodis",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblIzvodisFortblIzvodiIDResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblIzvodi>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "BSSR4.getTblPartneris",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblPartnerisForPartnerIDResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Bssr.Models.Bssr4.TblPartneri>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "tblizvodistavki",
+        "type": "set",
+        "value": "new Bssr.Models.Bssr4.TblIzvodiStavki(){}",
+        "valueType": "Bssr.Models.Bssr4.TblIzvodiStavki"
+      }
+    ]
+  },
+  "name": "Add Tbl Izvodi Stavki",
+  "layout": "Main"
+}

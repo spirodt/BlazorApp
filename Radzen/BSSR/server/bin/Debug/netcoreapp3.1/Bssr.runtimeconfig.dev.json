@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\spiro\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\spiro\\.nuget\\packages"
+    ]
+  }
+}

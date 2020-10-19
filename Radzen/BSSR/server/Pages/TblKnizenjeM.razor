@@ -1,0 +1,115 @@
+﻿@page "/tbl-knizenje-m"
+@layout MainLayout
+@inherits Bssr.Pages.TblKnizenjeMComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Tbl Knizenje M">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblKnizenjeMsResult" TItem="Bssr.Models.Bssr4.TblKnizenjeM" PageSize="20" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="ID" Title="ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblNormativID" Title="Tbl Normativ ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblArtikalID" Title="Tbl Artikal ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tipNaArtikal" Title="Tip Na Artikal">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="ProdaznaCena" Title="Prodazna Cena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="Kolicina" Title="Kolicina">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="Sifra" Title="Sifra">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblEdinecnaMerka" Title="Tbl Edinecna Merka">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblDDVID" Title="Tbl DDVID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tipNaKnizenje" Title="Tip Na Knizenje">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="NabavnaCena" Title="Nabavna Cena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="EdinecnaCena" Title="Edinecna Cena">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="IznosSoDDV" Title="Iznos So DDV">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="IznosBezDDV" Title="Iznos Bez DDV">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="IznosDDV" Title="Iznos DDV">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="DatumNaKnizenje" FormatString="{0:MM/dd/yyyy}" Title="Datum Na Knizenje">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblUserID" Title="Tbl User ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblObjektiID" Title="Tbl Objekti ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="DatumNaPocetok" FormatString="{0:MM/dd/yyyy}" Title="Datum Na Pocetok">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="DatumNaKraj" FormatString="{0:MM/dd/yyyy}" Title="Datum Na Kraj">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblSmetkaID" SortProperty="TblSmetka.Zabeleska" FilterProperty="TblSmetka.Zabeleska" Title="Tbl Smetka">
+              <Template Context="data">
+              @(data.TblSmetka?.Zabeleska)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblFakturaID" SortProperty="TblFaktura.Zabeleska" FilterProperty="TblFaktura.Zabeleska" Title="Tbl Faktura">
+              <Template Context="data">
+              @(data.TblFaktura?.Zabeleska)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblPriemID" SortProperty="TblPriem.IspratnicaFakturaBroj" FilterProperty="TblPriem.IspratnicaFakturaBroj" Title="Tbl Priem">
+              <Template Context="data">
+              @(data.TblPriem?.IspratnicaFakturaBroj)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="OtpecatenaFiskalna" Title="Otpecatena Fiskalna">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblValutaID" Title="Tbl Valuta ID">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="Rabat" Title="Rabat">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="IznosNaRabat" Title="Iznos Na Rabat">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="ProdaznaCenaSoRabat" Title="Prodazna Cena So Rabat">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblObjektiIDOD" Title="Tbl Objekti IDOD">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblObjektiIDDO" Title="Tbl Objekti IDDO">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="tblDokumentID" SortProperty="TblDokumenti.Zabeleska" FilterProperty="TblDokumenti.Zabeleska" Title="Tbl Dokumenti">
+              <Template Context="data">
+              @(data.TblDokumenti?.Zabeleska)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Property="KodNaDokument" Title="Kod Na Dokument">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblKnizenjeM" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="bssrModelsBssr4TblKnizenjeM">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblKnizenjeM))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

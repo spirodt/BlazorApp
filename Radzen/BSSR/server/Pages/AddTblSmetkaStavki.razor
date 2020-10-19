@@ -1,0 +1,85 @@
+﻿@page "/add-tbl-smetka-stavki"
+@layout MainLayout
+@inherits Bssr.Pages.AddTblSmetkaStavkiComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Bssr.Models.Bssr4
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@tblsmetkastavki" Visible="@(tblsmetkastavki != null)" TItem="Bssr.Models.Bssr4.TblSmetkaStavki" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Smetka" Component="tblSmetkaID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblSmetkasFortblSmetkaIDResult" TextProperty="Zabeleska" ValueProperty="ID" Placeholder="Choose TblSmetka" ShowSearch="false" style="display: block; width: 100%" @bind-Value="@(tblsmetkastavki.tblSmetkaID)" Name="TblSmetkaID">
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="TblSmetkaID" Text="tblSmetkaID is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Tbl Nalog" Component="tblNalogID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid Data="@getTblNalogsFortblNalogIDResult" TextProperty="Zabeleska" ValueProperty="ID" Placeholder="Choose TblNalog" ShowSearch="false" style="display: block; width: 100%" @bind-Value="@(tblsmetkastavki.tblNalogID)" Name="TblNalogID">
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="TblNalogID" Text="tblNalogID is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Status" Component="Status" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblsmetkastavki.Status)" Name="Status">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Kolicina" Component="Kolicina" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblsmetkastavki.Kolicina)" Name="Kolicina">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Kolicina" Text="Kolicina is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Cena" Component="Cena" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblsmetkastavki.Cena)" Name="Cena">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Cena" Text="Cena is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
