@@ -202,5 +202,6 @@
     ]
   },
   "name": "Tbl Nalog Izmeneta",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

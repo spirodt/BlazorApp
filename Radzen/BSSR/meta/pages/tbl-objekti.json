@@ -278,5 +278,6 @@
     ]
   },
   "name": "Tbl Objekti",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

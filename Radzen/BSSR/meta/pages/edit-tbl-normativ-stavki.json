@@ -336,5 +336,6 @@
     ]
   },
   "name": "Edit Tbl Normativ Stavki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -278,5 +278,6 @@
     ]
   },
   "name": "Tbl Banki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

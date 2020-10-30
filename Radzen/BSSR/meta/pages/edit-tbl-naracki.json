@@ -462,5 +462,6 @@
     ]
   },
   "name": "Edit Tbl Naracki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

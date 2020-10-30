@@ -1195,5 +1195,6 @@
     ]
   },
   "name": "Edit Tbl Artikal",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

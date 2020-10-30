@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\spiro\\OneDrive\\Documents\\backupp\\BSSR\\server\\Bssr.csproj": {}
+    "C:\\Projects\\blazor\\BlazorApp\\Radzen\\BSSR\\server\\Bssr.csproj": {}
   },
   "projects": {
-    "C:\\Users\\spiro\\OneDrive\\Documents\\backupp\\BSSR\\server\\Bssr.csproj": {
+    "C:\\Projects\\blazor\\BlazorApp\\Radzen\\BSSR\\server\\Bssr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\spiro\\OneDrive\\Documents\\backupp\\BSSR\\server\\Bssr.csproj",
+        "projectUniqueName": "C:\\Projects\\blazor\\BlazorApp\\Radzen\\BSSR\\server\\Bssr.csproj",
         "projectName": "Bssr",
-        "projectPath": "C:\\Users\\spiro\\OneDrive\\Documents\\backupp\\BSSR\\server\\Bssr.csproj",
+        "projectPath": "C:\\Projects\\blazor\\BlazorApp\\Radzen\\BSSR\\server\\Bssr.csproj",
         "packagesPath": "C:\\Users\\spiro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\spiro\\OneDrive\\Documents\\backupp\\BSSR\\server\\obj\\",
+        "outputPath": "C:\\Projects\\blazor\\BlazorApp\\Radzen\\BSSR\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\spiro\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -316,5 +316,6 @@
     ]
   },
   "name": "Edit Tbl Nalog Stavki Izmeneta",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

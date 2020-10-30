@@ -302,5 +302,6 @@
     ]
   },
   "name": "Tbl Config",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

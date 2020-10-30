@@ -709,5 +709,6 @@
     ]
   },
   "name": "Edit Tbl Normativ",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

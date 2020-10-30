@@ -322,5 +322,6 @@
     ]
   },
   "name": "Add Tbl Presmetkovni Edinici",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

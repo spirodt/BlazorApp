@@ -282,5 +282,6 @@
     ]
   },
   "name": "Tbl User Configs",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

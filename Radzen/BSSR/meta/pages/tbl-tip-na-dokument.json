@@ -300,5 +300,6 @@
     ]
   },
   "name": "Tbl Tip Na Dokument",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

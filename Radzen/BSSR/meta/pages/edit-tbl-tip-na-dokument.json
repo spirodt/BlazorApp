@@ -460,5 +460,6 @@
     ]
   },
   "name": "Edit Tbl Tip Na Dokument",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

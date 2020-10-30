@@ -657,5 +657,6 @@
     ]
   },
   "name": "Edit Tbl Network PC",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

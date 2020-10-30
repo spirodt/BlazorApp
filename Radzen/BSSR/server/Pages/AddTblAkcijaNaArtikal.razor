@@ -5,63 +5,64 @@
 @using Radzen
 @using Radzen.Blazor
 @using Bssr.Models.Bssr4
+@inject Microsoft.Extensions.Localization.IStringLocalizer<AddTblAkcijaNaArtikal> L
 <RadzenContent Container="main">
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm Data="@tblakcijanaartikal" Visible="@(tblakcijanaartikal != null)" TItem="Bssr.Models.Bssr4.TblAkcijaNaArtikal" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@tblakcijanaartikal" TItem="Bssr.Models.Bssr4.TblAkcijaNaArtikal" Visible="@(tblakcijanaartikal != null)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Datum Pocetok" Component="DatumPocetok" style="width: 100%">
+                <RadzenLabel Component="DatumPocetok" style="width: 100%" Text="Datum Pocetok">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tblakcijanaartikal.DatumPocetok)" Name="DatumPocetok">
                 </RadzenDatePicker>
-                <RadzenRequiredValidator Component="DatumPocetok" Text="DatumPocetok is required" style="position: absolute">
+                <RadzenRequiredValidator Component="DatumPocetok" style="position: absolute" Text="DatumPocetok is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Datum Kraj" Component="DatumKraj" style="width: 100%">
+                <RadzenLabel Component="DatumKraj" style="width: 100%" Text="Datum Kraj">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@(tblakcijanaartikal.DatumKraj)" Name="DatumKraj">
                 </RadzenDatePicker>
-                <RadzenRequiredValidator Component="DatumKraj" Text="DatumKraj is required" style="position: absolute">
+                <RadzenRequiredValidator Component="DatumKraj" style="position: absolute" Text="DatumKraj is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Tbl Artikal" Component="tblArtikalID" style="width: 100%">
+                <RadzenLabel Component="tblArtikalID" style="width: 100%" Text="Tbl Artikal">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDownDataGrid Data="@getTblArtikalsFortblArtikalIDResult" TextProperty="Sifra" ValueProperty="ID" Placeholder="Choose TblArtikal" ShowSearch="false" style="display: block; width: 100%" @bind-Value="@(tblakcijanaartikal.tblArtikalID)" Name="TblArtikalID">
+                <RadzenDropDownDataGrid Data="@getTblArtikalsFortblArtikalIDResult" Placeholder="Choose TblArtikal" ShowSearch="false" style="display: block; width: 100%" TextProperty="Sifra" @bind-Value="@(tblakcijanaartikal.tblArtikalID)" ValueProperty="ID" Name="TblArtikalID">
                 </RadzenDropDownDataGrid>
-                <RadzenRequiredValidator Component="TblArtikalID" Text="tblArtikalID is required" style="position: absolute" DefaultValue="0">
+                <RadzenRequiredValidator Component="TblArtikalID" DefaultValue="0" style="position: absolute" Text="tblArtikalID is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Akciska Cena" Component="AkciskaCena" style="width: 100%">
+                <RadzenLabel Component="AkciskaCena" style="width: 100%" Text="Akciska Cena">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(tblakcijanaartikal.AkciskaCena)" Name="AkciskaCena">
                 </RadzenNumeric>
-                <RadzenRequiredValidator Component="AkciskaCena" Text="AkciskaCena is required" style="position: absolute">
+                <RadzenRequiredValidator Component="AkciskaCena" style="position: absolute" Text="AkciskaCena is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Rabat" Component="Rabat" style="width: 100%">
+                <RadzenLabel Component="Rabat" style="width: 100%" Text="Rabat">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -71,7 +72,7 @@
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
                 </RadzenButton>
                 <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>

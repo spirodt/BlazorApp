@@ -491,5 +491,6 @@
     ]
   },
   "name": "Add Tbl Priem Stavki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

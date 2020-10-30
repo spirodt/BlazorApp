@@ -294,5 +294,6 @@
     ]
   },
   "name": "Add Tbl Prevodi",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -416,5 +416,6 @@
     ]
   },
   "name": "Edit Tbl Config",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

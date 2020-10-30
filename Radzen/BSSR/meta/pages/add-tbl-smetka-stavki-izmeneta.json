@@ -406,5 +406,6 @@
     ]
   },
   "name": "Add Tbl Smetka Stavki Izmeneta",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V7gK2avBo1xEwW0TrecfZ6LoBxQC/pF3iz7aqJCCvtWK5CL5xdWfUJewLUMbPDD0h59+vbe2tSy30LWAliEyog==",
+  "dgSpecHash": "eSPpFUZ1I3jKYxSJRKITeou1QgSvhs6eLVodQpQWPvDQ9NWKTkH6pIue7ZxetRoMhXCiLGkixyoAcHDkMt9/3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\spiro\\OneDrive\\Documents\\backupp\\BSSR\\server\\Bssr.csproj",
+  "projectFilePath": "C:\\Projects\\blazor\\BlazorApp\\Radzen\\BSSR\\server\\Bssr.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\spiro\\.nuget\\packages\\documentformat.openxml\\2.9.0\\documentformat.openxml.2.9.0.nupkg.sha512",
     "C:\\Users\\spiro\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.0\\microsoft.aspnetcore.authorization.3.1.0.nupkg.sha512",

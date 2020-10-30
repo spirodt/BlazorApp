@@ -1178,5 +1178,6 @@
     ]
   },
   "name": "Add Tbl Artikal",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

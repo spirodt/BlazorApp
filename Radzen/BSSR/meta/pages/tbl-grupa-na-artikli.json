@@ -291,5 +291,6 @@
     ]
   },
   "name": "Tbl Grupa Na Artikli",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

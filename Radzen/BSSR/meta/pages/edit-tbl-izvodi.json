@@ -292,5 +292,6 @@
     ]
   },
   "name": "Edit Tbl Izvodi",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

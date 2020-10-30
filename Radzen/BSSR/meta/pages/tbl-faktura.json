@@ -322,5 +322,6 @@
     ]
   },
   "name": "Tbl Faktura",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

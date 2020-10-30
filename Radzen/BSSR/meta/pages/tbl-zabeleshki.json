@@ -173,5 +173,6 @@
     ]
   },
   "name": "Tbl Zabeleshki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -331,5 +331,6 @@
     ]
   },
   "name": "Add Tbl Grupa Na Artikli",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

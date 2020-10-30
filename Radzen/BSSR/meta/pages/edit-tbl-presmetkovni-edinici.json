@@ -339,5 +339,6 @@
     ]
   },
   "name": "Edit Tbl Presmetkovni Edinici",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

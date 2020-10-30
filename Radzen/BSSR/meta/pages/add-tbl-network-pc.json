@@ -640,5 +640,6 @@
     ]
   },
   "name": "Add Tbl Network PC",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

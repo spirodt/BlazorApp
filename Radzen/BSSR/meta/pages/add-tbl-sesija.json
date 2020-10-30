@@ -299,5 +299,6 @@
     ]
   },
   "name": "Add Tbl Sesija",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

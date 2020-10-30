@@ -418,5 +418,6 @@
     ]
   },
   "name": "Add Tbl Users",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

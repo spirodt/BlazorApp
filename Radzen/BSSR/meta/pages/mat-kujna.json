@@ -185,5 +185,6 @@
     ]
   },
   "name": "Mat Kujna",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

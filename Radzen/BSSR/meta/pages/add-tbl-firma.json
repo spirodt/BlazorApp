@@ -615,5 +615,6 @@
     ]
   },
   "name": "Add Tbl Firma",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

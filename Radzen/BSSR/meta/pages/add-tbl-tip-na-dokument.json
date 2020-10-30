@@ -443,5 +443,6 @@
     ]
   },
   "name": "Add Tbl Tip Na Dokument",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

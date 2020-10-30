@@ -197,5 +197,6 @@
     ]
   },
   "name": "Add Tbl Valuti",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

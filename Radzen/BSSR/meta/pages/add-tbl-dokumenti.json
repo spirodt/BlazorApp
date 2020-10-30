@@ -617,5 +617,6 @@
     ]
   },
   "name": "Add Tbl Dokumenti",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

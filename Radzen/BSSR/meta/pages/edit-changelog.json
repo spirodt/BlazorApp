@@ -301,5 +301,6 @@
     ]
   },
   "name": "Edit Changelog",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

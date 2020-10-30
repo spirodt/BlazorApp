@@ -336,5 +336,6 @@
     ]
   },
   "name": "Tbl Partneri",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

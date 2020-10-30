@@ -384,5 +384,6 @@
     ]
   },
   "name": "Edit Tbl Smetka Stavki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

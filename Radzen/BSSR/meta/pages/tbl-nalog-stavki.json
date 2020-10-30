@@ -278,5 +278,6 @@
     ]
   },
   "name": "Tbl Nalog Stavki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

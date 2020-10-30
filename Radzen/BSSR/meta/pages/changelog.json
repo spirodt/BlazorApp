@@ -275,5 +275,6 @@
     ]
   },
   "name": "Changelog",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

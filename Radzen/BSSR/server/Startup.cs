@@ -69,6 +69,20 @@ namespace Bssr
             services.AddScoped<NotificationService>();
             services.AddScoped<TooltipService>();
             services.AddScoped<ContextMenuService>();
+            services.AddLocalization();
+
+            var supportedCultures = new[]
+            {
+                new System.Globalization.CultureInfo("mk-MK"),
+            };
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("mk-MK");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
+
             OnConfigureServices(services);
         }
 
@@ -78,6 +92,19 @@ namespace Bssr
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             OnConfiguring(app, env);
+
+            var supportedCultures = new[]
+            {
+                new System.Globalization.CultureInfo("mk-MK"),
+            };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("mk-MK"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
+
             if (env.IsDevelopment())
             {
                 Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
@@ -87,15 +114,18 @@ namespace Bssr
             {
                 app.Use((ctx, next) =>
                 {
+                    ctx.Request.Scheme = "https";
                     return next();
                 });
             }
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                  name: "default",
+                  pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");

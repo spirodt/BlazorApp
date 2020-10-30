@@ -204,5 +204,6 @@
     ]
   },
   "name": "Edit Db Version",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

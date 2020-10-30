@@ -282,5 +282,6 @@
     ]
   },
   "name": "Tbl Ziro Smetki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

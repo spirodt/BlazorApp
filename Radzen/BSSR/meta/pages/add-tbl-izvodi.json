@@ -275,5 +275,6 @@
     ]
   },
   "name": "Add Tbl Izvodi",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

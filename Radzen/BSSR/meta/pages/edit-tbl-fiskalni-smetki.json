@@ -441,5 +441,6 @@
     ]
   },
   "name": "Edit Tbl Fiskalni Smetki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

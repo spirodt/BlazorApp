@@ -1,292 +1,288 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "type": "template-form",
-                  "name": "form0",
                   "components": [
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Datum Pocetok",
                               "component": "DatumPocetok",
                               "name": "DatumPocetokLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Datum Pocetok",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime",
                               "dateFormat": "MM/dd/yyyy",
-                              "type": "datepicker",
                               "name": "DatumPocetok",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "value": "${tblakcijanaartikal.DatumPocetok}"
+                              "type": "datepicker",
+                              "value": "${tblakcijanaartikal.DatumPocetok}",
+                              "valueType": "DateTime"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "DatumPocetokRequiredValidator",
                               "component": "DatumPocetok",
-                              "text": "DatumPocetok is required",
+                              "name": "DatumPocetokRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "DatumPocetok is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Datum Kraj",
                               "component": "DatumKraj",
                               "name": "DatumKrajLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Datum Kraj",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime",
                               "dateFormat": "MM/dd/yyyy",
-                              "type": "datepicker",
                               "name": "DatumKraj",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "value": "${tblakcijanaartikal.DatumKraj}"
+                              "type": "datepicker",
+                              "value": "${tblakcijanaartikal.DatumKraj}",
+                              "valueType": "DateTime"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "DatumKrajRequiredValidator",
                               "component": "DatumKraj",
-                              "text": "DatumKraj is required",
+                              "name": "DatumKrajRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "DatumKraj is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Tbl Artikal",
                               "component": "tblArtikalID",
                               "name": "tblArtikalIDLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tbl Artikal",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblArtikalsFortblArtikalIDResult}",
-                              "textProperty": "Sifra",
-                              "valueProperty": "ID",
-                              "placeholder": "Choose TblArtikal",
-                              "valueType": "int",
-                              "showSearch": false,
-                              "type": "dropdown-datagrid",
                               "name": "tblArtikalID",
+                              "placeholder": "Choose TblArtikal",
+                              "showSearch": false,
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "value": "${tblakcijanaartikal.tblArtikalID}"
+                              "textProperty": "Sifra",
+                              "type": "dropdown-datagrid",
+                              "value": "${tblakcijanaartikal.tblArtikalID}",
+                              "valueProperty": "ID",
+                              "valueType": "int"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "tblArtikalIDRequiredValidator",
                               "component": "tblArtikalID",
-                              "text": "tblArtikalID is required",
+                              "defaultValue": "0",
+                              "name": "tblArtikalIDRequiredValidator",
                               "style": {
                                 "position": "absolute"
                               },
-                              "defaultValue": "0"
+                              "text": "tblArtikalID is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Akciska Cena",
                               "component": "AkciskaCena",
                               "name": "AkciskaCenaLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Akciska Cena",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal",
-                              "type": "numeric",
                               "name": "AkciskaCena",
+                              "placeholder": "",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "value": "${tblakcijanaartikal.AkciskaCena}"
+                              "type": "numeric",
+                              "value": "${tblakcijanaartikal.AkciskaCena}",
+                              "valueType": "decimal"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "AkciskaCenaRequiredValidator",
                               "component": "AkciskaCena",
-                              "text": "AkciskaCena is required",
+                              "name": "AkciskaCenaRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "AkciskaCena is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Rabat",
                               "component": "Rabat",
                               "name": "RabatLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Rabat",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Rabat",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "${tblakcijanaartikal.Rabat}"
+                              "type": "numeric",
+                              "value": "${tblakcijanaartikal.Rabat}",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
                     },
                     {
-                      "type": "row",
                       "components": [
                         {
-                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "type": "button",
+                              "buttonStyle": "primary",
                               "buttonType": "submit",
                               "icon": "save",
                               "text": "Save",
-                              "buttonStyle": "primary"
+                              "type": "button"
                             },
                             {
-                              "type": "button",
                               "buttonStyle": "light",
-                              "style": {
-                                "marginLeft": "1rem"
-                              },
-                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              }
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "row"
                     }
                   ],
+                  "data": "${tblakcijanaartikal}",
                   "events": {
                     "submit": [
                       {
@@ -307,23 +303,28 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${tblakcijanaartikal}"
+                            "result": "${tblakcijanaartikal}",
+                            "type": "close-popup"
                           }
                         ],
                         "type": "invoke"
                       }
                     ]
                   },
-                  "data": "${tblakcijanaartikal}",
-                  "visible": "${tblakcijanaartikal != null}",
-                  "itemType": "Bssr.Models.Bssr4.TblAkcijaNaArtikal"
+                  "itemType": "Bssr.Models.Bssr4.TblAkcijaNaArtikal",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${tblakcijanaartikal != null}"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
@@ -349,6 +350,7 @@
       }
     ]
   },
+  "layout": "Main",
   "name": "Add Tbl Akcija Na Artikal",
-  "layout": "Main"
+  "access": []
 }

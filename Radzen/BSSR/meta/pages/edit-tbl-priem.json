@@ -724,5 +724,6 @@
     ]
   },
   "name": "Edit Tbl Priem",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

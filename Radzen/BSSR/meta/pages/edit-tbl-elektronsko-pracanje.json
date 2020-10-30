@@ -829,5 +829,6 @@
     ]
   },
   "name": "Edit Tbl Elektronsko Pracanje",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -280,5 +280,6 @@
     ]
   },
   "name": "Tbl Dokument Stavki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

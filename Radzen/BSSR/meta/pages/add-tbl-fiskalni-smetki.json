@@ -424,5 +424,6 @@
     ]
   },
   "name": "Add Tbl Fiskalni Smetki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

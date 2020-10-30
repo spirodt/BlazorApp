@@ -331,5 +331,6 @@
     ]
   },
   "name": "Tbl Priem",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

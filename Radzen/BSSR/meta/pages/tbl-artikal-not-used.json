@@ -307,5 +307,6 @@
     ]
   },
   "name": "Tbl Artikal Not Used",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

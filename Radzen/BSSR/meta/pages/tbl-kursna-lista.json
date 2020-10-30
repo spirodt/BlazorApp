@@ -257,5 +257,6 @@
     ]
   },
   "name": "Tbl Kursna Lista",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -288,5 +288,6 @@
     ]
   },
   "name": "Tbl Fiskalni Smetki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

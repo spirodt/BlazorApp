@@ -435,5 +435,6 @@
     ]
   },
   "name": "Edit Tbl Users",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

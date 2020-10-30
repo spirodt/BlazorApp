@@ -274,5 +274,6 @@
     ]
   },
   "name": "Tbl Zaliha Na Artikli",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

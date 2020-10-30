@@ -357,5 +357,6 @@
     ]
   },
   "name": "Edit Tbl Podgrupa ID",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

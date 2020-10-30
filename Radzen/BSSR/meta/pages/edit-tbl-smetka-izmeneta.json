@@ -671,5 +671,6 @@
     ]
   },
   "name": "Edit Tbl Smetka Izmeneta",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -272,5 +272,6 @@
     ]
   },
   "name": "Tbl DDV Stavka",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

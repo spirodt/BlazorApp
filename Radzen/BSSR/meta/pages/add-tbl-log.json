@@ -300,5 +300,6 @@
     ]
   },
   "name": "Add Tbl Log",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

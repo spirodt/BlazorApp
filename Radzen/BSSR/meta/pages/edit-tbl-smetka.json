@@ -774,5 +774,6 @@
     ]
   },
   "name": "Edit Tbl Smetka",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

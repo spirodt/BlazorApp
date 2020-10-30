@@ -654,5 +654,6 @@
     ]
   },
   "name": "Add Tbl Smetka Izmeneta",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

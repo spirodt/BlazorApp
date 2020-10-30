@@ -530,5 +530,6 @@
     ]
   },
   "name": "Add Tbl Izvodi Stavki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

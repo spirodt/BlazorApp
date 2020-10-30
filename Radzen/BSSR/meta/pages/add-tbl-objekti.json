@@ -273,5 +273,6 @@
     ]
   },
   "name": "Add Tbl Objekti",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

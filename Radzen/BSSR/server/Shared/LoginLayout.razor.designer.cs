@@ -7,11 +7,15 @@ using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using Bssr.Models.Bssr4;
+using Microsoft.JSInterop;
 
 namespace Bssr.Layouts
 {
     public partial class LoginLayoutComponent : LayoutComponentBase
     {
+        [Inject]
+        protected Microsoft.JSInterop.IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 

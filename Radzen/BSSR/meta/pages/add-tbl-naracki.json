@@ -445,5 +445,6 @@
     ]
   },
   "name": "Add Tbl Naracki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

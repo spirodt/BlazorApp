@@ -757,5 +757,6 @@
     ]
   },
   "name": "Add Tbl Smetka",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

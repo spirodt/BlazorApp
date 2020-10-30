@@ -624,5 +624,6 @@
     ]
   },
   "name": "Edit Tbl Faktura",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

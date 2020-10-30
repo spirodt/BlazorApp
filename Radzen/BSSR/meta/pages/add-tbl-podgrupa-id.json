@@ -340,5 +340,6 @@
     ]
   },
   "name": "Add Tbl Podgrupa ID",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

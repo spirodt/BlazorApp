@@ -511,5 +511,6 @@
     ]
   },
   "name": "Add Tbl Nalog",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

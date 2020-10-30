@@ -476,5 +476,6 @@
     ]
   },
   "name": "Edit Tbl Faktura Stavki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

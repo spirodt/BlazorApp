@@ -274,5 +274,6 @@
     ]
   },
   "name": "Tbl Akcija Na Artikal",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

@@ -283,5 +283,6 @@
     ]
   },
   "name": "Add Tbl Edinecni Merki",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

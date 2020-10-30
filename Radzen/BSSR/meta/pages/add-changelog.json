@@ -284,5 +284,6 @@
     ]
   },
   "name": "Add Changelog",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

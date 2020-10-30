@@ -607,5 +607,6 @@
     ]
   },
   "name": "Add Tbl Faktura",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

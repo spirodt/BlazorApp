@@ -3,11 +3,26 @@
     "BSSR4"
   ],
   "generator": "@radzen/blazor-server",
-  "https": false,
+  "https": true,
+  "ignore": [
+    ""
+  ],
   "layouts": [
     "Login",
     "Main"
   ],
+  "localization": {
+    "cultures": [
+      {
+        "text": "Macedonian (FYROM)",
+        "value": "mk-MK"
+      }
+    ],
+    "defaultCulture": {
+      "text": "Macedonian (FYROM)",
+      "value": "mk-MK"
+    }
+  },
   "logo": "",
   "name": "BSSR",
   "navigation": [
@@ -212,7 +227,9 @@
     "Add Tbl Ziro Smetki",
     "Edit Tbl Ziro Smetki"
   ],
+  "port": 8000,
   "serverLang": "cs",
+  "serverPort": 5000,
   "serverProject": true,
   "serverVersion": "3",
   "startPage": "Changelog",

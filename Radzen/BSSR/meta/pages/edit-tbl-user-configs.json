@@ -309,5 +309,6 @@
     ]
   },
   "name": "Edit Tbl User Configs",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

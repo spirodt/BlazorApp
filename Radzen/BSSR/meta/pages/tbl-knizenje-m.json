@@ -401,5 +401,6 @@
     ]
   },
   "name": "Tbl Knizenje M",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

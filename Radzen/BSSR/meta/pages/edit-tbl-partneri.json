@@ -571,5 +571,6 @@
     ]
   },
   "name": "Edit Tbl Partneri",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }

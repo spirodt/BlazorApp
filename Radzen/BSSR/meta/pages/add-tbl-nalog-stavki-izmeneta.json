@@ -299,5 +299,6 @@
     ]
   },
   "name": "Add Tbl Nalog Stavki Izmeneta",
-  "layout": "Main"
+  "layout": "Main",
+  "access": []
 }
