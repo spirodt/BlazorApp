@@ -14,7 +14,7 @@
       <div class="col-md-12">
         <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
         </RadzenButton>
-        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+        <RadzenSplitButton Icon="get_app" style="margin-bottom: 10px; margin-left: 10px" Text="Export" Click="@Splitbutton0Click">
           <ChildContent>
             <RadzenSplitButtonItem Text="Excel" Value="xlsx">
             </RadzenSplitButtonItem>
@@ -24,7 +24,7 @@
         </RadzenSplitButton>
         <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await Load();})">
         </RadzenTextBox>
-        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getTblFirmasResult" TItem="Bssr.Models.Bssr4.TblFirma" PageSize="20" RowSelect="@Grid0RowSelect">
+        <RadzenGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" ColumnWidth="131px" Data="@getTblFirmasResult" FilterMode="FilterMode.Advanced" TItem="Bssr.Models.Bssr4.TblFirma" PageSize="20" style="display: flex" RowSelect="@Grid0RowSelect">
           <Columns>
             <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblFirma" Property="ID" Title="ID">
             </RadzenGridColumn>
@@ -54,7 +54,7 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblFirma" Property="txIDFirma" Title="Tx ID Firma">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblFirma" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+            <RadzenGridColumn TItem="Bssr.Models.Bssr4.TblFirma" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
               <Template Context="bssrModelsBssr4TblFirma">
                 <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, bssrModelsBssr4TblFirma))" @onclick:stopPropagation="true">
                 </RadzenButton>
