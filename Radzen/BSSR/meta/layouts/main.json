@@ -9,8 +9,6 @@
               "class": "col-md-6 d-flex align-items-center",
               "components": [
                 {
-                  "name": "sidebar-toggle0",
-                  "type": "sidebar-toggle",
                   "events": {
                     "click": [
                       {
@@ -22,7 +20,19 @@
                         "type": "execute"
                       }
                     ]
-                  }
+                  },
+                  "name": "sidebar-toggle0",
+                  "style": {
+                    "display": "block"
+                  },
+                  "type": "sidebar-toggle"
+                },
+                {
+                  "name": "panelmenu0",
+                  "style": {
+                    "height": "100%"
+                  },
+                  "type": "panelmenu"
                 },
                 {
                   "name": "label0",
@@ -57,15 +67,7 @@
       "type": "body"
     },
     {
-      "components": [
-        {
-          "name": "panelmenu0",
-          "style": {
-            "height": "100%"
-          },
-          "type": "panelmenu"
-        }
-      ],
+      "components": [],
       "name": "sidebar0",
       "type": "sidebar"
     },

@@ -26,11 +26,6 @@
   "logo": "",
   "name": "BSSR",
   "navigation": [
-    "Changelog",
-    "Db Version",
-    "Mat",
-    "Mat Kujna",
-    "Tbl Akcija Na Artikal",
     "Tbl Artikal",
     "Tbl Artikal Not Used",
     "Tbl Banki",
@@ -80,14 +75,6 @@
     "Tbl Ziro Smetki"
   ],
   "pages": [
-    "Changelog",
-    "Add Changelog",
-    "Edit Changelog",
-    "Db Version",
-    "Add Db Version",
-    "Edit Db Version",
-    "Mat",
-    "Mat Kujna",
     "Tbl Akcija Na Artikal",
     "Add Tbl Akcija Na Artikal",
     "Edit Tbl Akcija Na Artikal",
@@ -144,7 +131,6 @@
     "Add Tbl Kursna Lista",
     "Edit Tbl Kursna Lista",
     "Tbl Log",
-    "Add Tbl Log",
     "Edit Tbl Log",
     "Tbl Nalog",
     "Add Tbl Nalog",
@@ -232,6 +218,6 @@
   "serverPort": 5000,
   "serverProject": true,
   "serverVersion": "3",
-  "startPage": "Changelog",
+  "startPage": "Tbl Artikal",
   "theme": "humanistic"
 }
