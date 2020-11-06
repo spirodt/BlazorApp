@@ -1,3 +1,6 @@
 bin
 /Radzen/BSSR/server/bin/Debug
 obj
+/Radzen/BSSR/.vs/Bssr/DesignTimeBuild/.dtbcache.v2
+/Radzen/BSSR/.vs/Bssr/config/applicationhost.config
+/Radzen/BSSR/.vs/Bssr/v16/.suo

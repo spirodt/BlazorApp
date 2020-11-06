@@ -10,33 +10,76 @@
 <RadzenContextMenu />
 
 <RadzenHeader>
-  <ChildContent>
-    <div class="row justify-content-start align-items-center">
-      <div class="col-md-6 d-flex align-items-center">
-        <RadzenSidebarToggle style="display: block" Click="@SidebarToggle0Click">
-        </RadzenSidebarToggle>
-        <RadzenPanelMenu style="height: 100%">
-        </RadzenPanelMenu>
-        <RadzenLabel Text="BSSR">
-        </RadzenLabel>
-      </div>
-      <div class="col-md-6 text-lg-right">
-      </div>
-    </div>
-  </ChildContent>
+    <ChildContent>
+        <div class="row justify-content-start align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+                <RadzenSidebarToggle Click="@SidebarToggle0Click">
+                </RadzenSidebarToggle>
+                <RadzenLabel Text="BSSR">
+                </RadzenLabel>
+            </div>
+            <div class="col-md-6 text-lg-right">
+            </div>
+        </div>
+    </ChildContent>
 </RadzenHeader>
 <RadzenBody @ref="body0">
-  <ChildContent>
-    <RadzenContentContainer Name="main">
-    @Body
-    </RadzenContentContainer>
-  </ChildContent>
+    <ChildContent>
+        <RadzenContentContainer Name="main">
+            @Body
+        </RadzenContentContainer>
+    </ChildContent>
 </RadzenBody>
 <RadzenSidebar @ref="sidebar0">
+    <ChildContent>
+        <RadzenPanelMenu style="height: 100%">
+            <ChildContent>
+                <RadzenPanelMenuItem Text="Tbl Artikal" Path="tbl-artikal">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Banki" Path="tbl-banki">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Edinecni Merki" Path="tbl-edinecni-merki">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Elektronsko Pracanje" Path="tbl-elektronsko-pracanje">
+                </RadzenPanelMenuItem>
+
+                <RadzenPanelMenuItem Text="Tbl Grupa Na Artikli" Path="tbl-grupa-na-artikli">
+                </RadzenPanelMenuItem>
+
+         
+               
+         
+                <RadzenPanelMenuItem Text="Tbl Normativ" Path="tbl-normativ">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Normativ Stavki" Path="tbl-normativ-stavki">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Objekti" Path="tbl-objekti">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Partneri" Path="tbl-partneri">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Podgrupa ID" Path="tbl-podgrupa-id">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Presmetkovni Edinici" Path="tbl-presmetkovni-edinici">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Prevodi" Path="tbl-prevodi">
+                </RadzenPanelMenuItem>
+               
+                <RadzenPanelMenuItem Text="Tbl Tip Na Dokument" Path="tbl-tip-na-dokument">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Users" Path="tbl-users">
+                </RadzenPanelMenuItem>
+              
+                <RadzenPanelMenuItem Text="Tbl Zabeleshki" Path="tbl-zabeleshki">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Tbl Ziro Smetki" Path="tbl-ziro-smetki">
+                </RadzenPanelMenuItem>
+            </ChildContent>
+        </RadzenPanelMenu>
+    </ChildContent>
 </RadzenSidebar>
 <RadzenFooter>
-  <ChildContent>
-    <RadzenLabel Text="BSSR, Copyright Ⓒ 2020 - new version">
-    </RadzenLabel>
-  </ChildContent>
+    <ChildContent>
+        <RadzenLabel Text="BSSR, Copyright Ⓒ 2020">
+        </RadzenLabel>
+    </ChildContent>
 </RadzenFooter>
